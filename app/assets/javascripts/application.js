@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require skrollr.min.js
+//= require imagesloaded
+//= require main.js
