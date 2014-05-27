@@ -1,54 +1,37 @@
-<section class="window">
-	<div class="parallax-image1" data-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -150px;">
+<!-- Method 1, using a list -->
 
-	</div>
-
-	<div class="content">
-
-	</div>
-</section>
-
-<section class="window">
-	<div class="parallax-image2" data-bottom-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -300px;">
-
-	</div>
-
-	<div class="content">
+<ul>
+	<li class="window" data-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -150px;">
 		
-	</div>
-</section>
+		<%= link_to 'https://itunes.apple.com/ca/album/meet-walkervilles-live-at/id594041963', target: '_blank' do %>
+			<div class="album-wrapper">
+				<div class="album-art"><img id="cover" data-src=<%= image_path('album_art_colour.jpg') %> data-src-colour=<%= image_path('album_art_b_and_w.jpg') %> src=<%= image_path('album_art_b_and_w.jpg') %>/></div>
+				<h2>Buy the album.</h2>
+			<div>
+		<% end %>
+			<!-- <div class="box-quote-wrapper"> -->
+			<!-- 	<div class="quote-background">
+					<div class="quote">
+						<h1>
+							If <b>love</b> were a band, it would be </br>the <b>Walkervilles</b>.
+						</h1>
+					</div>
+				</div> -->
+			<!-- </div> -->
 
-<section class="window">
-	<div class="parallax-image3" data-bottom-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -300px;">
-
-	</div>
-
-	<div class="content">
+		<div class="arrow-wrapper">
+			<div id="arrow"></div>
+		</div>
+	</li>
+	<li class="content" >
+		<div class="video">
+			<iframe width="560" height="315" src="//www.youtube.com/embed/y2CS5GKOkEQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</li>
+	<li class="window" data-bottom-top="background-position: 50% -200px;" data-top-bottom="background-position: 50% 25px;">
 		
-	</div>
-</section>
-
-
-<!-- <section class="window">
-
-</section>
-
-<section class="window">
-
-</section>
-
-<section class="window">
-
-</section>
-
-<section class="window">
-
-</section>
-
-<section class="window">
-
-</section>
-
-<section class="window">
-
-</section> -->
+	</li>
+	<li class="content" ></li>
+	<li class="window"></li>
+	<li class="content"></li>
+</ul>
