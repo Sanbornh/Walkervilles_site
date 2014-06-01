@@ -23,12 +23,12 @@ $( window ).resize(function() {
 });
 
 $( document ).ready(function() {
-	$('#cover').mouseenter(function() {
+	$('.album-wrapper').mouseenter(function() {
 		console.log('here')
-		$(this).attr('src', $(this).data('src'))
+		$('#cover').attr('src', $('#cover').data('src'))
 	});
 
-	$('#cover').mouseleave(function() {
-		$(this).attr('src', $(this).data('src-colour'))
+	$('.album-wrapper').mouseleave(function() {
+		$('#cover').attr('src', $('#cover').data('src-colour'))
 	});
 });
