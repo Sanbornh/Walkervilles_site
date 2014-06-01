@@ -44,12 +44,26 @@ ul {
 	}
 }
 
-.album-wrapper {
+.nav-bar {
 	left: 0;
 	position: fixed;
 	z-index: 1000;
 	margin: 25px;
 	text-align: center;
+
+	.nav-button {
+		margin-top: 10px;
+		background-color: $content-color;
+		border: 4px solid $content-color;
+	}
+}
+
+.album-wrapper {
+	// left: 0;
+	// position: fixed;
+	// z-index: 1000;
+	// margin: 25px;
+	// text-align: center;
 	background-color: $content-color;
 	border: 4px solid $content-color;
 
@@ -64,21 +78,7 @@ ul {
 	}
 }
 
-// .arrow-wrapper {
-// 	width: 100%;
-// 	height: 10%;
-// 	bottom: 9%;
-// 	position: absolute;
-// }
 
-// #arrow {
-// 	width: 50px;
-// 	height: 50px;
-// 	margin: 0 auto;
-// 	border-left: 5px solid $content-border;
-// 	border-bottom: 5px solid $content-border;
-// 	@include rotate-image(-45deg);
-// }
 
 // ----- CONTENT STYLING -----\\
 

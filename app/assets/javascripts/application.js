@@ -16,3 +16,4 @@
 //= require modernizr.js
 //= require imagesloaded
 //= require main.js
+//= require jquery.scrollTo.js

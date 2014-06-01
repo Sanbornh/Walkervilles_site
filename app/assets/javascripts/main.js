@@ -1,5 +1,8 @@
 skrollr.init({
-	forceHeight: false
+	forceHeight: false,
+	smoothScrolling: true,
+	smoothScrollingDuration: 10,
+	edgeStrategy: 'ease'
 });
 
 $( window ).resize(function() {
@@ -16,19 +19,25 @@ $( window ).resize(function() {
 		skrollr.init({
 			forceHeight: false,
 			smoothScrolling: true,
-			smoothScrollingDuration: 100,
+			smoothScrollingDuration: 10,
 			edgeStrategy: 'ease'
 		});
 	}
 });
 
 $( document ).ready(function() {
+
+	// Handles hover functions on album artwork
 	$('.album-wrapper').mouseenter(function() {
-		console.log('here')
 		$('#cover').attr('src', $('#cover').data('src'))
 	});
 
 	$('.album-wrapper').mouseleave(function() {
 		$('#cover').attr('src', $('#cover').data('src-colour'))
 	});
+
+	$('.nav-button').click(function() {
+		$.scrollTo($('.content:nth-child(2)'), {duration: 600});
+	});
+
 });

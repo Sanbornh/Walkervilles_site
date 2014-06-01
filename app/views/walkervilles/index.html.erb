@@ -3,22 +3,18 @@
 <ul>
 	<li class="window" data-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -150px;">
 		
-		<%= link_to 'https://itunes.apple.com/ca/album/meet-walkervilles-live-at/id594041963', target: '_blank' do %>
-			<div class="album-wrapper">
-				<div class="album-art"><img id="cover" data-src=<%= image_path('album_art_colour.jpg') %> data-src-colour=<%= image_path('album_art_b_and_w.jpg') %> src=<%= image_path('album_art_b_and_w.jpg') %>/></div>
-				<h2>Buy the album.</h2>
-			<div>
-		<% end %>
-			<!-- <div class="box-quote-wrapper"> -->
-			<!-- 	<div class="quote-background">
-					<div class="quote">
-						<h1>
-							If <b>love</b> were a band, it would be </br>the <b>Walkervilles</b>.
-						</h1>
-					</div>
-				</div> -->
-			<!-- </div> -->
+		<div class="nav-bar">
+			<%= link_to 'https://itunes.apple.com/ca/album/meet-walkervilles-live-at/id594041963', target: '_blank' do %>
+				<div class="album-wrapper">
+					<div class="album-art"><img id="cover" data-src=<%= image_path('album_art_colour.jpg') %> data-src-colour=<%= image_path('album_art_b_and_w.jpg') %> src=<%= image_path('album_art_b_and_w.jpg') %>/></div>
+					<h2>Buy the album.</h2>
+				</div>
+			<% end %>
 
+			<div class="nav-button"><h2>Music</h2></div>
+			<div class="nav-button"><h2>Tour Dates</h2></div>
+			<div class="nav-button"><h2></h2></div>
+		</div>
 		<div class="arrow-wrapper">
 			<div id="arrow"></div>
 		</div>
