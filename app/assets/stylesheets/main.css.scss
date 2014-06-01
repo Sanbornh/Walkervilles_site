@@ -46,7 +46,7 @@ ul {
 .nav-bar {
 	left: 0;
 	position: fixed;
-	z-index: 1000;
+	z-index: 100;
 	margin: 25px;
 	text-align: center;
 
@@ -54,7 +54,25 @@ ul {
 		margin-top: 10px;
 		background-color: $content-color;
 		border: 4px solid $content-color;
+		position: relative;
+		height: 20px;
+		cursor: pointer;
+		position: absolute;
+		width: 95%;
+
+		&:nth-child(2) {
+			z-index: 1000;
+		}
 	}
+}
+
+.nav-arrow {
+	height: 20px;
+	width: 20px;
+	border-top: 2px solid $content-border;
+	border-left: 2px solid $content-border;
+	@include rotate-image(-135deg);
+	margin: -7px auto 0 auto;
 }
 
 .album-wrapper {

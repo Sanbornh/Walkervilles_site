@@ -37,9 +37,9 @@ $( document ).ready(function() {
 	});
 
 	// Handles navbar links to anchors
-	$('.nav-button').click(function() {
-		$.scrollTo($('.content:nth-child(2)'), {duration: 600});
-	});
+	// $('.nav-button').click(function() {
+	// 	$.scrollTo($('.content:nth-child(2)'), {duration: 600});
+	// });
 
 	// Back top top button fade in when window top is past 200
 	// and fade out when window is back at the top
