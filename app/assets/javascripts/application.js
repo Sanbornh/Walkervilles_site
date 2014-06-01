@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require skrollr.min.js
 //= require modernizr.js
-//= require imagesloaded
 //= require main.js
 //= require jquery.scrollTo.js
