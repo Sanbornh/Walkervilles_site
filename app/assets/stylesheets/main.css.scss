@@ -29,7 +29,7 @@ ul {
 		z-index: -1;
 	}
 
-	&:nth-child(3){
+	&:nth-child(3), &:nth-child(5){
 		height: 50%;
 		min-height: 200px;
 		background: url(image_path('wkvls_compressed3.jpg')) no-repeat center;
@@ -37,8 +37,6 @@ ul {
 	}
 
 	&:nth-child(5){
-		height: 50%;
-		min-height: 200px;
 		background: url(image_path('wkvls_compressed2.jpg')) no-repeat center;
 		@include background-size(cover);
 	}
@@ -108,27 +106,27 @@ ul {
 	border-left: 6px solid $content-color;
 }
 
-// ----- CONTENT STYLING -----\\
-
+// ----- CONTENT STYLING ----- \\
+// ----- GENERAL CONTENT ----- \\
 .content {
 		border-top: 15px solid $content-border;
 		border-bottom: 15px solid $content-border;
+		background-color: $content-color;
 		z-index: 10;
 
 	&:nth-child(2) {
 		height: 700px;
-		background-color: $content-color;
-		position: relative;
 		width: 100%;
+		position: relative;
 		padding: 1px;
 	}
 
 	&:nth-child(4), &:nth-child(6) {
 		height: 400px;
-		background-color: $content-color;
 	}
 }
 
+// ----- FIRST CONTENT ----- \\
 .video {
 	// overflow: auto;
 	position: relative;
@@ -154,31 +152,10 @@ ul {
 	}
 }
 
-.quote {
-	text-align: center;
-	margin-top: 3%;
 
-	h1 {
-		font-size: 2.5em;
-		// font-weight: 700;
-		color: $content-color;
-	}
-}
+// ----- SECOND CONTENT ----- \\
+// ------ THIRD CONTENT ----- \\
 
-.box-quote-wrapper {
-	width: 100%;
-	height: 200px;
-	bottom: 30%;
-	position: absolute;
-}
-
-.quote-background {
-	height: 63%;
-	width: 700px;
-	margin: 0 auto;
-	background-color: rgba(0, 0, 0, 0.6);
-	border: 10px solid #212121;
-}
 
 // -- STYLES FOR SCREENSIZE < 680px -- \\
 // ------ SCROLLING TURNED OFF ------- \\
