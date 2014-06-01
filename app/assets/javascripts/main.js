@@ -29,15 +29,32 @@ $( document ).ready(function() {
 
 	// Handles hover functions on album artwork
 	$('.album-wrapper').mouseenter(function() {
-		$('#cover').attr('src', $('#cover').data('src'))
+		$('#cover').attr('src', $('#cover').data('src'));
 	});
 
 	$('.album-wrapper').mouseleave(function() {
-		$('#cover').attr('src', $('#cover').data('src-colour'))
+		$('#cover').attr('src', $('#cover').data('src-colour'));
 	});
 
+	// Handles navbar links to anchors
 	$('.nav-button').click(function() {
 		$.scrollTo($('.content:nth-child(2)'), {duration: 600});
+	});
+
+	// Back top top button fade in when window top is past 200
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 200) {
+			$('.arrow-wrapper').fadeIn('slow');
+		}
+
+		if($(this).scrollTop() < 200) {
+			$('.arrow-wrapper').fadeOut('slow');
+		}
+	});
+
+	// Handles back-to-top functionality
+	$('.arrow-wrapper').click(function() {
+		$.scrollTo($('.window:nth-child(1)'), {duration: 600});
 	});
 
 });
