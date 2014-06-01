@@ -44,6 +44,7 @@ ul {
 	}
 }
 
+// ----- NAVBAR ----- \\
 .nav-bar {
 	left: 0;
 	position: fixed;
@@ -59,11 +60,6 @@ ul {
 }
 
 .album-wrapper {
-	// left: 0;
-	// position: fixed;
-	// z-index: 1000;
-	// margin: 25px;
-	// text-align: center;
 	background-color: $content-color;
 	border: 4px solid $content-color;
 
