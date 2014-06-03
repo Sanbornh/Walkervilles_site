@@ -109,12 +109,8 @@ ul {
 	width: 25px;
 	border-top: 2px solid $content-border;
 	border-left: 2px solid $content-border;
-	position: absolute;
+	@include center;
 	top: 10px;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: auto;
 	z-index: 100;
 }
 
@@ -131,11 +127,11 @@ ul {
 		border-bottom: 15px solid $content-border;
 		background-color: $content-color;
 		z-index: 10;
+		position: relative;
 
 	&:nth-child(2) {
 		height: 700px;
 		width: 100%;
-		position: relative;
 		padding: 1px;
 	}
 
@@ -172,6 +168,12 @@ ul {
 
 
 // ----- SECOND CONTENT ----- \\
+.tour-dates-wrapper {
+	height: 90%;
+	width: 60%;
+	@include center;
+	overflow: scroll;
+}
 // ------ THIRD CONTENT ----- \\
 
 
