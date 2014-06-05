@@ -16,11 +16,20 @@
 				<div class="nav-button button">
 					<div class="nav-arrow"></div>
 				</div>
-				<div class="nav-button"><h2>Music</h2></div>
-				<div class="nav-button"><h2>Tour Dates</h2></div>
-				<div class="nav-button"><h2>Twitter</h2></div>
-				<div class="nav-button"><h2>Facebook</h2></div>
-				<div class="nav-button"><h2>Instagram</h2></div>
+				<div class="nav-button go-to-music"><h2>Music</h2></div>
+				<div class="nav-button go-to-dates"><h2>Tour Dates</h2></div>
+
+				<%= link_to "https://twitter.com/Walkervilles", target: '_blank' do %>
+					<div class="nav-button"><h2>Twitter</h2></div>
+				<% end %>
+
+				<%= link_to "https://www.facebook.com/Walkervilles", target: '_blank' do %>
+					<div class="nav-button"><h2>Facebook</h2></div>
+				<% end %>
+
+				<%= link_to "http://instagram.com/walkervilles", target: '_blank' do %>
+					<div class="nav-button"><h2>Instagram</h2></div>
+				<% end %>
 			</div>
 		
 		</div>
