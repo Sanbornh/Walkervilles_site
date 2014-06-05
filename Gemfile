@@ -48,3 +48,5 @@ group :development, :test do
 	gem 'hirb'
 	gem 'pry'
 end
+
+gem 'rails_12factor', group: :production
