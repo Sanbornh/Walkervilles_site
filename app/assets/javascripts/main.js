@@ -58,16 +58,24 @@ $( document ).ready(function() {
 		$.scrollTo($('.window:nth-child(1)'), {duration: 600});
 	});
 
-	// Customize the Bandsintown Widget
-	// do {
-	// 	$('.toggle-comments').hide()
-	// } while ( $('tbody').length < 2 )
 
-	// while ( $('tbody').length === 0 ) {
-	// 	console.log($('tbody').length)	
-	// }
-	
+	// Handles navbar animations
+	var extended = false
+	var numButtons = $('.nav-button').length;
 
-
-
+	$('.button').click(function() {
+		if(!extended) {
+			for(var i = 0; i < numButtons; i++) {
+				var offset = i * 40;
+	      $($('.nav-button')[i]).animate({top: offset + 'px'}, {duration: 200});   
+	      extended = true;
+	    }
+	  } else {
+	  	for(var i = 0; i < numButtons; i++) {
+				var offset = 0;
+	      $($('.nav-button')[i]).animate({top: offset + 'px'}, {duration: 200});   
+	      extended = false;
+	    }
+	  }
+  });
 });
