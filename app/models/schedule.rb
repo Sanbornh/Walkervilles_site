@@ -1,3 +1,5 @@
+require 'net/http'
+
 class Schedule
 	
 	def tour_dates
