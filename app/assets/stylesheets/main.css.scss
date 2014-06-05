@@ -88,6 +88,11 @@ ul {
 	margin: -7px auto 0 auto;
 }
 
+.nav-arrow-up {
+	@include rotate-image(45deg);
+	margin: 4px auto 4px auto;
+}
+
 .album-wrapper {
 	background-color: $content-color;
 	border: 4px solid $content-color;

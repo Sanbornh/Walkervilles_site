@@ -68,12 +68,16 @@ $( document ).ready(function() {
 			for(var i = 0; i < numButtons; i++) {
 				var offset = i * 40;
 	      $($('.nav-button')[i]).animate({top: offset + 'px'}, {duration: 200});   
+
+	      $('.nav-arrow').addClass('nav-arrow-up');
 	      extended = true;
 	    }
 	  } else {
 	  	for(var i = 0; i < numButtons; i++) {
 				var offset = 0;
 	      $($('.nav-button')[i]).animate({top: offset + 'px'}, {duration: 200});   
+
+	      $('.nav-arrow').removeClass('nav-arrow-up');
 	      extended = false;
 	    }
 	  }
