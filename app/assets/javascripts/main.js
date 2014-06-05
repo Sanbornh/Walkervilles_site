@@ -58,4 +58,16 @@ $( document ).ready(function() {
 		$.scrollTo($('.window:nth-child(1)'), {duration: 600});
 	});
 
+	// Customize the Bandsintown Widget
+	// do {
+	// 	$('.toggle-comments').hide()
+	// } while ( $('tbody').length < 2 )
+
+	// while ( $('tbody').length === 0 ) {
+	// 	console.log($('tbody').length)	
+	// }
+	
+
+
+
 });

@@ -41,22 +41,38 @@
 	</li>
 	<li class="content">
 		<div class="tour-dates-wrapper">
-			<% @tour_dates.each do |date| %>
-			<div>
-				<h1><%= date["venue"]["name"] %></h1>
-				<h1><%= date["venue"]["city"] %>, <%= date["venue"]["region"] %></h1>
-				<p><%= date["datetime"] %></p>
-
-				<% if date["ticket_status"] %>
-					<div><%= date["ticket_url"] %></div>
-				<% end %>
-
-			</div>
-		<% end %>
+			<div class="tour-title"><h1>Tour Dates</h1></div>
+				<table>
+					<tr>
+						<td><h2>Date</h2></td>
+						<td><h2>Venue</h2></td>
+						<td><h2>Location</h2></td>
+						<td><h2>Tickets</h2></td>
+					</tr>
+					<% @tour_dates.each do |date| %>
+						<tr>
+							<td><h2><%= date["datetime"].to_datetime.strftime('%b %d') %></h2></td>
+							<td><%= date["venue"]["name"] %></td>
+							<td><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></td>
+							<% if date["ticket_status"] == "available" %>
+								<td>
+									<%= link_to date["ticket_url"], target: '_blank' do %>
+										Get Tickets!
+									<% end %>
+								</td>
+							<% else %>
+								<td></td>
+							<% end %>
+						</tr>
+					<% end %>
+				</table>
 		</div>
 	</li>
 
 	<!-- Third Parallax group -->
 	<li class="window" data-bottom-top="background-position: 50% -200px;" data-top-bottom="background-position: 50% 25px;"></li>
-	<li class="content"></li>
+	<li class="content">
+		<!-- <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script> -->
+		<!-- <a href="http://www.bandsintown.com/The%20Walkervilles" class="bit-widget-initializer" data-artist="The Walkervilles" data-text-color="#212121" data-separator-color="#212121">Bandsintown</a> -->
+	</li>
 </ul>
