@@ -1,28 +1,37 @@
-skrollr.init({
-	forceHeight: false,
-	smoothScrolling: true,
-	smoothScrollingDuration: 10,
-	edgeStrategy: 'ease'
-});
+function initiliazeSkrollr() {
+	skrollr.init({
+		forceHeight: false,
+		smoothScrolling: true,
+		smoothScrollingDuration: 10,
+		edgeStrategy: 'ease'
+	});
+}
 
-$( window ).resize(function() {
+function killSkrollr() {
+	var s = skrollr.init();
+	s.destroy();
+}
 
+function toggleSkrollr() {
 	if(Modernizr.mq('screen and (max-width: 680px)')) {
-
-		// console.log("Below 680 " + Modernizr.mq('screen and (max-width: 800px)'))
-		var s = skrollr.init();
-		s.destroy();
-
+		killSkrollr();
 	} else {
-
-		// console.log("Above 680 " + Modernizr.mq('screen and (max-width: 800px)'))
-		skrollr.init({
-			forceHeight: false,
-			smoothScrolling: true,
-			smoothScrollingDuration: 10,
-			edgeStrategy: 'ease'
-		});
+		initiliazeSkrollr();
 	}
+}
+
+function scrollOnClick(button, target) {
+	$(button).click(function() {
+		$.scrollTo($(target), {duration: 600});
+	});
+}
+
+// Check on initial load whether to turn parallax ON or OFF
+toggleSkrollr();
+
+// Check on resize whether to turn parallax ON or OFF
+$( window ).resize(function() {
+	toggleSkrollr();
 });
 
 $( document ).ready(function() {
@@ -36,34 +45,22 @@ $( document ).ready(function() {
 		$('#cover').attr('src', $('#cover').data('src-colour'));
 	});
 
-	// Handles navbar links to anchors
-	$('.go-to-music').click(function() {
-		$.scrollTo($('.content:nth-child(2)'), {duration: 600});
-	});
+	// On-page navigation
+	scrollOnClick('.go-to-music', '.content:nth-child(2)');  // Click 'Music' scroll to youtube video
+	scrollOnClick('.go-to-dates', '.content:nth-child(4)');  // Click 'Tour Dates', scroll to list of tour dates
+	scrollOnClick('.arrow-wrapper', '.window:nth-child(1)'); // Click back to top arrow and scroll to top
 
-	$('.go-to-dates').click(function() {
-		$.scrollTo($('.content:nth-child(4)'), {duration: 600});
-	});
-
-	// Back top top button fade in when window top is past 200
+	// Back to top button fade in when window top is past 200
 	// and fade out when window is back at the top
 	$(window).scroll(function() {
 		if($(this).scrollTop() > 200) {
 			$('.arrow-wrapper').fadeIn('slow');
-		}
-
-		if($(this).scrollTop() < 200) {
+		} else {
 			$('.arrow-wrapper').fadeOut('slow');
 		}
 	});
 
-	// Handles back-to-top functionality
-	$('.arrow-wrapper').click(function() {
-		$.scrollTo($('.window:nth-child(1)'), {duration: 600});
-	});
-
-
-	// Handles navbar animations
+	// Controls expansion and contraction animations for navbar
 	var extended = false
 	var numButtons = $('.nav-button').length;
 
