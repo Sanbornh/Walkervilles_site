@@ -12,7 +12,7 @@ function killSkrollr() {
 	s.destroy();
 }
 
-function toggleSkrollr() {
+function toggleParallax() {
 	if(Modernizr.mq('screen and (max-width: 680px)')) {
 		killSkrollr();
 	} else {
@@ -27,11 +27,11 @@ function scrollOnClick(button, target) {
 }
 
 // Check on initial load whether to turn parallax ON or OFF
-toggleSkrollr();
+toggleParallax();
 
 // Check on resize whether to turn parallax ON or OFF
 $( window ).resize(function() {
-	toggleSkrollr();
+	toggleParallax();
 });
 
 $( document ).ready(function() {
