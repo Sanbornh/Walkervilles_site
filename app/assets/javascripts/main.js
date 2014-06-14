@@ -26,13 +26,8 @@ function scrollOnClick(button, target) {
 	});
 }
 
-// Check on initial load whether to turn parallax ON or OFF
-toggleParallax();
-
-// Check on resize whether to turn parallax ON or OFF
-$( window ).resize(function() {
-	toggleParallax();
-});
+toggleParallax();                     // Check on initial load whether to turn parallax ON or OFF
+$( window ).resize(toggleParallax()); // Check on resize whether to turn parallax ON or OFF
 
 $( document ).ready(function() {
 
