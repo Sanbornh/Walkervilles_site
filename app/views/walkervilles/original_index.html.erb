@@ -1,0 +1,91 @@
+<ul>
+	<!-- First Parallax group -->
+	<li class="window" data-top="background-position: 50% 0px;" data-top-bottom="background-position: 50% -150px;">
+		
+		<!-- NAVBAR!! -->
+		<div class="nav-bar">
+			<%= link_to 'https://itunes.apple.com/ca/album/meet-walkervilles-live-at/id594041963', target: '_blank' do %>
+				<div class="album-wrapper">
+					<div class="album-art"><img id="cover" data-src=<%= image_path('album_art_colour.jpg') %> data-src-colour=<%= image_path('album_art_b_and_w.jpg') %> src=<%= image_path('album_art_b_and_w.jpg') %>/></div>
+					<h2>Buy the album.</h2>
+				</div>
+			<% end %>
+
+			<div class="button-stack">
+				
+				<div class="nav-button button">
+					<div class="nav-arrow"></div>
+				</div>
+				<div class="nav-button go-to-music"><h2>Music</h2></div>
+				<div class="nav-button go-to-dates"><h2>Tour Dates</h2></div>
+
+				<%= link_to "https://twitter.com/Walkervilles", target: '_blank' do %>
+					<div class="nav-button"><h2>Twitter</h2></div>
+				<% end %>
+
+				<%= link_to "https://www.facebook.com/Walkervilles", target: '_blank' do %>
+					<div class="nav-button"><h2>Facebook</h2></div>
+				<% end %>
+
+				<%= link_to "http://instagram.com/walkervilles", target: '_blank' do %>
+					<div class="nav-button"><h2>Instagram</h2></div>
+				<% end %>
+			</div>
+		
+		</div>
+
+		<!-- Back to top Arrow -->
+		<div class="arrow-wrapper">
+			<div id="arrow"></div>
+			<div id="arrow-outline"></div>
+		</div>
+	</li>
+
+	<li class="content" >
+		<h1 class="pull-quote">“If love were a band, it would be</br> the <b>Walkervilles</b>.”</h1>
+		<div class="video">
+			<iframe width="640" height="360" src="//www.youtube.com/embed/y2CS5GKOkEQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</li>
+
+	<!-- Second Parallax group -->
+	<li class="window" data-bottom-top="background-position: 50% -200px;" data-top-bottom="background-position: 50% 25px;">
+		
+	</li>
+	<li class="content">
+		<div class="tour-dates-wrapper">
+			<div class="tour-title"><h1>Tour Dates</h1></div>
+				<table>
+					<tr>
+						<td><h2>Date</h2></td>
+						<td><h2>Venue</h2></td>
+						<td><h2>Location</h2></td>
+						<td><h2>Tickets</h2></td>
+					</tr>
+					<% @tour_dates.each do |date| %>
+						<tr>
+							<td><h2><%= date["datetime"].to_datetime.strftime('%b %d') %></h2></td>
+							<td><%= date["venue"]["name"] %></td>
+							<td><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></td>
+							<% if date["ticket_status"] == "available" %>
+								<td>
+									<%= link_to date["ticket_url"], target: '_blank' do %>
+										Get Tickets!
+									<% end %>
+								</td>
+							<% else %>
+								<td></td>
+							<% end %>
+						</tr>
+					<% end %>
+				</table>
+		</div>
+	</li>
+
+	<!-- Third Parallax group -->
+	<!-- <li class="window" data-bottom-top="background-position: 50% -200px;" data-top-bottom="background-position: 50% 25px;"></li>
+	<li class="content">
+		<script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script>
+		<!-- <a href="http://www.bandsintown.com/The%20Walkervilles" class="bit-widget-initializer" data-artist="The Walkervilles" data-text-color="#212121" data-separator-color="#212121">Bandsintown</a> 
+	</li> -->
+</ul>
