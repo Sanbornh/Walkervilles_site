@@ -1,13 +1,19 @@
 <div class="main-wrapper">
-  <div class="poster-wrapper">
-    <img src="<%= image_path('the_boys_splash.jpg') %>">
-  </div>
+  <% if browser.mobile? %>
+    <div class="poster-wrapper">
+      <img src="<%= image_path('the_boys_splash.jpg') %>">
+    </div>
+  <% end %>
 
   <div class="smoke-wrapper">
-    <!-- <video autoplay loop poster="<%#= image_path('the_boys.jpg') %>" id="smoke-vid"> -->
-      <!-- <source src="<%#= video_path('slow_smoke.webm') %>" type="video/webm"> -->
-      <!-- <source src="<%#= video_path('HDsmoke_5_compressed2.mp4') %>" type="video/mp4"> -->
-    <!-- </video> -->
+    <% if !browser.mobile? %>
+      <video autoplay loop poster="<%= image_path('the_boys_splash.jpg') %>" id="smoke-vid">
+        <!-- <source src="<%#= video_path('slow_smoke.webm') %>" type="video/webm"> -->
+        <% if browser.chrome? %>
+          <source src="<%= video_path('HDsmoke_5_compressed.mp4') %>" type="video/mp4">
+        <% end %>
+      </video>
+    <% end %>
 
     <div class="text">
      <div class="tour-dates-wrapper">
