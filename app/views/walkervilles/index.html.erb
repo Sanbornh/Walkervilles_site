@@ -7,9 +7,10 @@
 
   <div class="smoke-wrapper">
     <% if !browser.mobile? %>
-      <video autoplay loop poster="<%= image_path('the_boys_splash.jpg') %>" id="smoke-vid">
-        <!-- <source src="<%#= video_path('slow_smoke.webm') %>" type="video/webm"> -->
-        <% if browser.chrome? %>
+      <video autoplay loop poster="<%= image_path('poster.png') %>" id="smoke-vid">
+        <% if browser.firefox?  %>
+          <source src="<%= video_path('HDsmoke_5_compressed.webm') %>" type="video/webm">
+        <% elsif browser.chrome? || browser.safari? %>
           <source src="<%= video_path('HDsmoke_5_compressed.mp4') %>" type="video/mp4">
         <% end %>
       </video>
