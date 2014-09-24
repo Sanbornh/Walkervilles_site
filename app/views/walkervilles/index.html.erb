@@ -1,26 +1,58 @@
 <div class="main-wrapper">
   <div class="poster-wrapper">
-    <img src="<%= image_path('the_boys.jpg') %>">
+    <img src="<%= image_path('the_boys_splash.jpg') %>">
   </div>
 
   <div class="smoke-wrapper">
-    <video autoplay loop poster="" id="smoke-vid">
+    <!-- <video autoplay loop poster="<%#= image_path('the_boys.jpg') %>" id="smoke-vid"> -->
       <!-- <source src="<%#= video_path('slow_smoke.webm') %>" type="video/webm"> -->
-      <source src="<%= video_path('slow_smoke_cut.mp4') %>" type="video/mp4">
-    </video>
+      <!-- <source src="<%#= video_path('HDsmoke_5_compressed2.mp4') %>" type="video/mp4"> -->
+    <!-- </video> -->
 
     <div class="text">
-      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab quod velit cumque, voluptate iste eveniet accusantium asperiores quis mollitia modi hic repellendus reiciendis rem facere, quibusdam neque exercitationem autem ut!</div>
-      <div>Beatae, voluptatum, cupiditate. Pariatur soluta cumque asperiores earum aperiam delectus laborum esse a iure mollitia cupiditate tenetur perspiciatis sequi at omnis minima sunt, et consequuntur ipsum magnam voluptate voluptatem veritatis!</div>
-      <div>Nostrum hic ratione, non minima cum error, rerum dolores dicta unde maxime sapiente, tempore labore distinctio enim illo facere corporis harum veritatis. Accusamus vero voluptas autem perferendis, non quos exercitationem!</div>
-      <div>Culpa explicabo id nam ratione omnis illo qui est mollitia ea aut quis, officia ipsum. Numquam placeat, blanditiis quibusdam harum laborum animi! Officia fugiat tempora asperiores consectetur soluta recusandae neque.</div>
-      <div>Minima architecto, dicta! Et iste nihil sequi ratione, accusamus quae suscipit cum minima rerum temporibus fuga iure sint quod porro laudantium aperiam, atque culpa doloremque modi tempora, eos omnis. Sint.</div>
-      <div>Eius neque excepturi delectus maiores ipsam voluptas impedit quisquam officia nostrum, tempore, ut facere velit fugiat at, laudantium similique suscipit quos voluptatem harum eos pariatur unde amet. Ad, laudantium, accusantium!</div>
-      <div>Dolor minima dolores necessitatibus, sed error accusamus earum? Laborum omnis consectetur sint harum modi id eum, ad quisquam, esse explicabo ea reprehenderit eveniet fugiat. Nemo dolore deleniti vel. Dignissimos, eius.</div>
-      <div>Esse ad eum magnam tenetur exercitationem, earum, similique totam cum aliquid recusandae est impedit cupiditate aspernatur culpa. Odit velit voluptates quidem perspiciatis! Expedita iusto odit dolorem obcaecati consequuntur voluptas quos.</div>
-      <div>Facilis amet similique culpa ab ducimus, optio, commodi provident magni repellat in pariatur velit iste blanditiis vel rerum sit omnis quia ex maiores quasi. Quo inventore aut hic cum possimus.</div>
-      <div>Repellat asperiores dolores deleniti eos eius fugiat! Iste, nam, libero. Unde, dicta debitis quos veritatis cupiditate eius omnis, voluptatum quasi sit recusandae nisi dignissimos libero iste cumque, nemo non molestiae!</div>
-    </div>
-  </div>
+     <div class="tour-dates-wrapper">
+      <div class="social-wrapper">
+        <%= link_to "http://instagram.com/walkervilles", target: '_blank' do %>
+          <i class="fa fa-instagram"></i>
+        <% end %>
 
+        <%= link_to "https://twitter.com/Walkervilles", target: '_blank' do %>
+          <i class="fa fa-twitter"></i>
+        <% end %>
+
+        <%= link_to "https://www.facebook.com/Walkervilles", target: '_blank' do %>
+          <i class="fa fa-facebook"></i>
+        <% end %>
+      </div>
+      
+      <div class="title-wrapper">
+        <h1 id="walkervilles">The Walkervilles  </h1> <h1 id="cool"> Rebirth of the cool</h1>
+      </div>
+        <table>
+         <% @tour_dates.each do |date| %>
+            <tr>
+              <td class="date-cell"><h2><%= date["datetime"].to_datetime.strftime('%b %d') %></h2></td>
+              <td><%= date["venue"]["name"] %></td>
+
+              <% if date["venue"]["region"] =~ /\d/ %>
+                <td><%= date["venue"]["city"] %></td>
+              <% else %>
+                <td><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></td>
+              <% end %>
+
+              <% if date["ticket_status"] == "available" %>
+                <td class="tickets-link">
+                  <%= link_to date["ticket_url"], target: '_blank' do %>
+                    Get Tickets!
+                  <% end %>
+                </td>
+              <% else %>
+                <td></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </table>
+    </div>
+
+  </div>
 </div>

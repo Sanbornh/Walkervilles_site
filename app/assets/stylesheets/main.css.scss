@@ -9,8 +9,9 @@ h1 {
 }
 
 a, a:link, a:hover, a:visited, a:active {
-	// text-decoration: none;
-	color: $content-border;
+	text-decoration: none;
+	color: #46227F;
+
 }
 
 html, body {
@@ -43,13 +44,13 @@ ul {
 	img {
 		// height: 100%;
 		width: 75%;
-		margin: 0 auto;
+		margin: auto;
 		position: absolute;
 		right: 0;
 		left: 0;
 		bottom: 0;
 		top: 0;
-		margin-top: 5%
+		
 	}
 	// background: url(image_path('Tour_Poster.jpg')) no-repeat;
 	// @include background-size(cover);
@@ -82,7 +83,7 @@ ul {
     background: url(mel.jpg) no-repeat;
     // background-size: 100% 100%;
     top: 0px;
-    left: -400px; /* fixed to left. Replace it by right if you want.*/
+    left: -350px; /* fixed to left. Replace it by right if you want.*/
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -92,6 +93,109 @@ ul {
 }
 
 .text {
-	font-size: 50px;
-	color: gold;
+	font-size: 1em;
+	// color: #F5D76E;
+	// color: #D6C477;
+	color: #B0A478;
+}
+
+h1, h2 {
+	display: inline-block;
+	float: left;
+	font-family: helvetica;
+	font-weight: 800;
+}
+
+#walkervilles {
+	color: #BFBDB2;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+
+#cool {
+	color: #46227F;
+	margin-bottom: 15px;
+}
+
+.tour-dates-wrapper {
+	font-family: sans-serif;
+	position: absolute;
+	top: 8%;
+	margin: 0 auto;
+
+	tr {
+		padding: 5px;
+	}
+
+	td {
+		padding: 5px;
+	}
+}
+
+.tickets-link a {
+	color: #BFBDB2;
+	text-decoration: underline;
+}
+
+.social-wrapper {
+	font-size: 1.5em;
+	color: #46227F;
+	text-align: right;
+}
+
+#blurb {
+	position: absolute;
+	top:100%;
+}
+
+.date-cell {
+	width: 4em;
+}
+
+@media screen and (max-width: 1200px) {
+	.poster-wrapper {
+		width: 100%;
+		display: block;
+		position: relative;
+
+		img {
+			height: 75%;
+			width: auto;
+		}
+	}
+
+	.smoke-wrapper {
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	.tour-dates-wrapper {
+		width: 100%;
+
+		table {
+			width: 75%;
+			margin: 0 auto;
+		}
+	}
+
+	.title-wrapper {
+		width: 75%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.poster-wrapper {
+		img {
+			height: auto;
+			width: 80%;
+		}
+	}
+
+	.tour-dates-wrapper {
+		table {
+			width: 100%;
+		}
+	}
 }
