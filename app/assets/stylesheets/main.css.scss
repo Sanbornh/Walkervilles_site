@@ -40,20 +40,25 @@ ul {
 	display: inline-block;
 	float: left;
 	position: fixed;
+	text-align: center;
 
 	img {
-		// height: 100%;
 		width: 75%;
-		margin: auto;
-		position: absolute;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		top: 0;
 		
 	}
 	// background: url(image_path('Tour_Poster.jpg')) no-repeat;
 	// @include background-size(cover);
+}
+
+.poster-inner-wrapper {
+	position: relative;
+	margin-top: 50%;
+  -webkit-transform: translateY(-50%);
+}
+
+.poster-download {
+	text-align: right;
+	margin-right: 12.5%;
 }
 
 .smoke-wrapper {

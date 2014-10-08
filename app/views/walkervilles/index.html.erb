@@ -1,7 +1,16 @@
 <div class="main-wrapper">
   <%# if browser.mobile? %>
     <div class="poster-wrapper">
-      <img src="<%= image_path('the_boys_splash.jpg') %>">
+      <div class="poster-inner-wrapper">
+        <img src="<%= image_path('the_boys_splash.jpg') %>">
+        <h3 class="poster-download">
+          <!-- <a href="https://s3.amazonaws.com/walkervilles/Tour_Poster.jpg" target="_blank"> -->
+          <%= link_to 'Download full resolution tour poster', download_url %>
+            <!-- Download full resolution tour poster.   -->
+          <!-- </a> -->
+        </h3>  
+      </div>
+      
     </div>
   <%# end %>
 
@@ -35,6 +44,7 @@
       <div class="title-wrapper">
         <h1 id="walkervilles">The Walkervilles  </h1> <h1 id="cool"> ON TOUR NOW </h1>
       </div>
+      <% if @tour_dates %>
         <table>
          <% @tour_dates.each do |date| %>
             <tr>
@@ -59,6 +69,7 @@
             </tr>
           <% end %>
         </table>
+      <% end %>
     </div>
 
   </div>
