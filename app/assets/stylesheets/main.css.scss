@@ -43,7 +43,8 @@ ul {
 	text-align: center;
 
 	img {
-		width: 75%;
+		// width: 75%;
+		height: 100%;
 		
 	}
 	// background: url(image_path('Tour_Poster.jpg')) no-repeat;
@@ -51,14 +52,23 @@ ul {
 }
 
 .poster-inner-wrapper {
-	position: relative;
-	margin-top: 50%;
-  -webkit-transform: translateY(-50%);
+	// position: relative;
+	// margin-top: 50%;
+ //  -webkit-transform: translateY(-50%);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	/* display: inline-block; */
+	height: 75%;
+	/* display: inline-block; */
+	left: 0;
+	right: 0;
 }
 
 .poster-download {
-	text-align: right;
-	margin-right: 12.5%;
+	// text-align: right;
+	// margin-right: 12.5%;
 }
 
 .smoke-wrapper {
@@ -164,8 +174,8 @@ h1, h2 {
 		position: relative;
 
 		img {
-			height: 75%;
-			width: auto;
+			// height: 75%;
+			// width: auto;
 		}
 	}
 
