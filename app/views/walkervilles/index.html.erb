@@ -9,6 +9,13 @@
             <!-- Download full resolution tour poster.   -->
           <!-- </a> -->
         </h3>  
+
+        <div class="mobile-title-wrapper">
+          <h1 id="walkervilles">The Walkervilles  </h1> <h1 id="cool"> ON TOUR NOW </h1>
+        </div>
+        <div class="mobile-arrow-outline">
+          <div class="arrow"></div>
+        </div>
       </div>
       
     </div>
@@ -53,9 +60,9 @@
                 <div class="tour-cell venue"><%= date["venue"]["name"] %></div>
 
                 <% if date["venue"]["region"] =~ /\d/ %>
-                  <div class="tour-cell"><%= date["venue"]["city"] %></div>
+                  <div class="tour-cell location"><%= date["venue"]["city"] %></div>
                 <% else %>
-                  <div class="tour-cell"><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></div>
+                  <div class="tour-cell location"><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></div>
                 <% end %>
 
                 <% if date["ticket_status"] == "available" %>
