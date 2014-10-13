@@ -135,8 +135,11 @@ h1, h2 {
 .tour-dates-wrapper {
 	font-family: sans-serif;
 	position: absolute;
-	top: 8%;
+	top: 4%;
 	margin: 0 auto;
+	width: 50%;
+	height: 90%;
+	// overflow: scroll;
 
 	tr {
 		padding: 5px;
@@ -147,15 +150,31 @@ h1, h2 {
 	}
 }
 
+.table-wrapper {
+	height: 90%;
+	overflow: scroll;
+
+}
+
+.tour-cell {
+	width: 30%;
+	display: inline-block;
+}
+
 .tickets-link a {
 	color: #BFBDB2;
 	text-decoration: underline;
 }
 
+.tickets-link {
+	width: 15%;
+	min-width: 82px;
+}
+
 .social-wrapper {
 	font-size: 1.5em;
 	color: #46227F;
-	text-align: right;
+	// text-align: right;
 }
 
 #blurb {
@@ -164,7 +183,24 @@ h1, h2 {
 }
 
 .date-cell {
-	width: 4em;
+	width: 10%;
+	min-width: 70px;
+	height: 100%;
+	padding: 5px 0;
+	vertical-align: top;
+}
+
+.single-date-wrapper {
+	margin: 10px 0;
+	height: 2em;
+	
+}
+
+.venue {
+	width: 36%;
+	height: 100%;
+	padding: 5px 0;
+	// vertical-align: baseline;
 }
 
 @media screen and (max-width: 1200px) {

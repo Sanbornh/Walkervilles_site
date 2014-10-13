@@ -44,32 +44,34 @@
       <div class="title-wrapper">
         <h1 id="walkervilles">The Walkervilles  </h1> <h1 id="cool"> ON TOUR NOW </h1>
       </div>
-      <% if @tour_dates %>
-        <table>
-         <% @tour_dates.each do |date| %>
-            <tr>
-              <td class="date-cell"><h2><%= date["datetime"].to_datetime.strftime('%b %d') %></h2></td>
-              <td><%= date["venue"]["name"] %></td>
+      <div class="table-wrapper">
+        <% if @tour_dates %>
+          
+           <% @tour_dates.each do |date| %>
+            <div class="single-date-wrapper">    
+                <div class="date-cell tour-cell"><h2><%= date["datetime"].to_datetime.strftime('%b %d') %></h2></div>
+                <div class="tour-cell venue"><%= date["venue"]["name"] %></div>
 
-              <% if date["venue"]["region"] =~ /\d/ %>
-                <td><%= date["venue"]["city"] %></td>
-              <% else %>
-                <td><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></td>
-              <% end %>
+                <% if date["venue"]["region"] =~ /\d/ %>
+                  <div class="tour-cell"><%= date["venue"]["city"] %></div>
+                <% else %>
+                  <div class="tour-cell"><%= date["venue"]["city"] + ", " + date["venue"]["region"] %></div>
+                <% end %>
 
-              <% if date["ticket_status"] == "available" %>
-                <td class="tickets-link">
-                  <%= link_to date["ticket_url"], target: '_blank' do %>
-                    Get Tickets!
-                  <% end %>
-                </td>
-              <% else %>
-                <td></td>
-              <% end %>
-            </tr>
-          <% end %>
-        </table>
-      <% end %>
+                <% if date["ticket_status"] == "available" %>
+                  <div class="tickets-link tour-cell">
+                    <%= link_to date["ticket_url"], target: '_blank' do %>
+                      Get Tickets!
+                    <% end %>
+                  </div>
+                <% else %>
+                  <!-- <div class="tour-cell"></div> -->
+                <% end %>
+            </div>    
+            <% end %>
+          
+        <% end %>
+      </div>
     </div>
 
   </div>
