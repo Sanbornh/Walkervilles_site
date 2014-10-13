@@ -110,11 +110,15 @@ ul {
 	color: #BFBDB2;
 	margin-right: 10px;
 	margin-bottom: 15px;
+	z-index: 2;
+	position: relative;
 }
 
 #cool {
 	color: #46227F;
 	margin-bottom: 15px;
+	z-index: 2;
+	position: relative;
 }
 
 .tour-dates-wrapper {
@@ -188,7 +192,9 @@ ul {
 .single-date-wrapper {
 	margin: 10px 0;
 	height: 2em;
-	
+}
+.buffer {
+	height: 50px;
 }
 
 .venue {
@@ -216,7 +222,51 @@ ul {
 	display: none;
 }
 
+.blur-top {
+	width: 105%;
+	left: -50px;
+	height: 50px;
+	position: absolute;
+	top: 35px;
+	background-color: black;
+	 -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.blur-bottom {
+	width: 105%;
+	left: -50px;
+	height: 50px;
+	position: absolute;
+	bottom: -25px;;
+	background-color: black;
+	 -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+iframe {
+	margin: 50px auto;
+	width: 90%;
+
+}
+
+
 @media screen and (max-width: 1024px) {
+
+	iframe {
+		display:none;
+	}
+
+	.blur-top, .blur-bottom {
+		display: none;
+	}
+
 	.poster-download {
 		display: none;
 	}
