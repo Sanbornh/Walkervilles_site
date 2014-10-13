@@ -51,7 +51,7 @@
       <div class="title-wrapper">
         <h1 id="walkervilles">The Walkervilles  </h1> <h1 id="cool"> ON TOUR NOW </h1>
       </div>
-      
+
       <div class="table-wrapper">
         <% if @tour_dates %>
           
@@ -73,6 +73,11 @@
                 <div class="tickets-link tour-cell">
                   <%= link_to date["ticket_url"], target: '_blank' do %>
                     Get Tickets!
+                  <% end %>
+                </div>
+                <div class="mobile-ticket tour-cell">
+                  <%= link_to date["ticket_url"], target: '_blank' do %>
+                    <i class="fa fa-ticket"></i>
                   <% end %>
                 </div>
               <% end %>

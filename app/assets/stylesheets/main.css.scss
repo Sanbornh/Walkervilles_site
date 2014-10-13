@@ -159,7 +159,17 @@ ul {
 .social-wrapper {
 	font-size: 1.5em;
 	color: #46227F;
-	// text-align: right;
+
+
+
+	.fa {
+		padding: 0 15px;
+	}
+
+	.fa:first-child {
+		padding-left: 0;
+	}
+	
 }
 
 #blurb {
@@ -202,6 +212,10 @@ ul {
 	display: none;
 }
 
+.mobile-ticket {
+	display: none;
+}
+
 @media screen and (max-width: 1024px) {
 	.poster-download {
 		display: none;
@@ -239,10 +253,11 @@ ul {
 	}
 
 	.table-wrapper {
-		overflow: auto;
+		overflow: visible;
 		height: auto;
 		width: 90%;
 		margin: 0 auto;
+		margin-bottom: 100px;
 	}
 
 	.poster-inner-wrapper {
@@ -272,19 +287,81 @@ ul {
 	.mobile-title-wrapper {
 		display: block;
 	}
+
+
+	.social-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+	
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 565px) {
+	.date-cell {
+		height: auto;
+	}
+
+	.single-date-wrapper {
+		height: auto;
+		border-bottom: 1px solid rgba(191,189,178, 0.2);
+		border-top: 1px solid rgba(191,189,178, 0.2);
+	}
+
+	.venue, .location {
+		width: 35%;
+	}
+
+	.tickets-link {
+		display: none;
+	}
+
+	.mobile-ticket {
+		width: 1%;
+		font-size: 1.5em;
+		display: inline-block;
+	}
+
+	.mobile-ticket a {
+		color: #BFBDB2;
+	}
+
 	.poster-wrapper {
 		img {
 			height: auto;
 			width: 80%;
 		}
 	}
+	
+	.social-wrapper {
+		width: 100%;
+		padding: 13px 0;
+		position: fixed;
+		top: 0;
 
-	.tour-dates-wrapper {
-		table {
-			width: 100%;
+		background-color: black;
+
+		a {
+			display: inline-block;
+			margin: 0;
+			float: left;
+			width: 33%;
+			text-align: center;
+			padding: 0;
+		}
+
+		.fa {
+			padding: 0;
 		}
 	}
+
+	.poster-inner-wrapper {
+		padding-bottom: 0;
+		height: 70%;
+	}
+
+	// .tour-dates-wrapper {
+	// 	table {
+	// 		width: 100%;
+	// 	}
+	// }
 }
